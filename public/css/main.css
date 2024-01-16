@@ -1,0 +1,27 @@
+body {
+  padding-bottom: 70px;
+  padding-top: 70px;
+}
+
+.space {
+  margin-bottom: 50px;
+}
+.space2 {
+  margin-bottom: 100px;
+}
+.imgx {
+  object-fit: cover;
+  height: 20vh;
+  width: 15vw;
+  border: 5px solid #fff;
+  border-radius: 10px;
+}
+
+#player {
+  width: 100%;
+}
+.selectionBtn{
+    justify-content: center;
+    align-items: center;
+    vertical-align: center;
+}

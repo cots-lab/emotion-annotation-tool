@@ -1,0 +1,83 @@
+<%- include('./includes/top.ejs') %>
+<div class="space2"></div>
+<div class="row mx-auto justify-content-center align-items-center flex-column">
+  <div class="col-7">
+    <div class="jumbotron">
+      <h1 class="display-5">SAM Based Music Emotion Annotation</h1>
+      <p class="lead">
+        SAMBMEA Tool use digital version of Self Assessment Menikins to annotate music emotions.
+      </p>
+      <hr class="my-4" />
+      <p>
+        Complete the following fields to contribute to the annotation process.
+      </p>
+    </div>
+
+    <form action="/" method="POST">
+      <div class="row mb-3">
+        <label for="inputPassword3" class="col-sm-2 col-form-label">Age</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="inputPassword3"
+            name="age"
+            required
+          />
+        </div>
+      </div>
+      <fieldset class="row mb-3">
+        <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+        <div class="col-sm-10">
+          <div class="row"></div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="gender"
+              id="gender1"
+              value="male"
+              checked
+            />
+            <label class="form-check-label" for="gender1"> Male </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="gender"
+              id="gender2"
+              value="female"
+            />
+            <label class="form-check-label" for="gender2"> Female </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="gender"
+              id="gender2"
+              value="other"
+            />
+            <label class="form-check-label" for="gender2"> Other </label>
+          </div>
+        </div>
+      </fieldset>
+      <div class="card text-center">
+        <div class="card-header">Start Annotation</div>
+        <div class="card-body">
+          <p class="card-text">
+            Each annotation takes approximately one minute, and the whole data
+            collection contains fifty tracks of music. You can exit at any
+            time by clicking the <i>finish</i> button following any number of
+            annotations.
+          </p>
+          <button type="submit" class="btn btn-primary">
+            Next Step
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<%- include('./includes/bottom.ejs') %>
