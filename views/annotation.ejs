@@ -1,0 +1,87 @@
+<%- include('./includes/top2.ejs') %> 
+<div class="space2"></div>
+<div class="row mx-auto justify-content-center align-items-center flex-column">
+  <div class="col-8">
+    <div class="alert alert-primary space2" role="alert">
+      <h4 class="alert-heading">Selected Music Track: <%= music %></h4>
+      <p>
+        You must listen to the music clip at least 10 seconds uninterrupted by external
+        stimuli and use a good headset/sound-system to listen to music.
+      </p>
+      <hr />
+      Subject ID : <%= id %><br />
+      Selected Music Track: <%= music %><br /><br />
+      <audio id="player" controls>
+        <source src="./music/<%= music %>" type="audio/mp3" />
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
+</div>
+<div class="row mx-auto justify-content-center align-items-center flex-column">
+  <div class="col-8">
+    <form method="GET" action="/arousal-annotation">
+      <input type="hidden" name="id" value="<%= id %>" />
+      <input type="hidden" name="music" value="<%= music %>" />
+      <div class="row">
+        <div class="col-md">
+          <div class="d-flex justify-content-end">
+            <button id="arousalStart" type="submit" class="btn btn-primary">
+              Next Step
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-caret-right-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <br />
+    <h5>Annotation Progress : 1 of 4 Steps</h5>
+    <div class="progress">
+      <div
+        class="progress-bar progress-bar-striped progress-bar-animated"
+        role="progressbar"
+        aria-valuenow="25"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        style="width: 25%"
+      ></div>
+    </div>
+  </div>
+</div>
+<script>
+  var player = document.getElementById("player");
+  var arousalStart = document.getElementById("arousalStart");
+
+  player.addEventListener("play", function () {
+      // make a api call to /doserial with the music id
+      var music = "<%= music %>";
+      // only get number between brackets from music
+      var music_id = music.match(/\(([^)]+)\)/)[1];
+      console.log(music_id);
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "http://127.0.0.1:5000/doserial/" + music_id, true);
+      xhr.send();
+  });
+
+  arousalStart.addEventListener("click", function(){
+      //anotation start marker using 99
+      var anotation = "99";
+      console.log(anotation);
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "http://127.0.0.1:5000/doserial/ranking/" + anotation, true);
+      xhr.send();
+  });
+
+</script>
+<%- include('./includes/bottom.ejs') %>
