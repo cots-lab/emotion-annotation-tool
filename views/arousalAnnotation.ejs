@@ -128,8 +128,8 @@ $(document).ready(function(){
 });
 
 arousalScale1.addEventListener("click", function(){
-      //arousal scale select marker using 100
-      var anotation = "100";
+      //arousal scale select marker using 101 for -2
+      var anotation = "101";
       console.log(anotation);
       var xhr = new XMLHttpRequest();
       xhr.open("GET", "http://127.0.0.1:5000/doserial/ranking/" + anotation, true);
@@ -137,7 +137,7 @@ arousalScale1.addEventListener("click", function(){
   });
 
   arousalScale2.addEventListener("click", function(){
-      //arousal scale select marker using 101
+      //arousal scale select marker using 102 for -1
       var anotation = "101";
       console.log(anotation);
       var xhr = new XMLHttpRequest();
@@ -146,8 +146,8 @@ arousalScale1.addEventListener("click", function(){
   });
 
   arousalScale3.addEventListener("click", function(){
-      //arousal scale select marker using 102
-      var anotation = "102";
+      //arousal scale select marker using 103 for 0
+      var anotation = "101";
       console.log(anotation);
       var xhr = new XMLHttpRequest();
       xhr.open("GET", "http://127.0.0.1:5000/doserial/ranking/" + anotation, true);
@@ -155,8 +155,8 @@ arousalScale1.addEventListener("click", function(){
   });
 
   arousalScale4.addEventListener("click", function(){
-      //arousal scale select marker using 103
-      var anotation = "103";
+      //arousal scale select marker using 104 for 1
+      var anotation = "101";
       console.log(anotation);
       var xhr = new XMLHttpRequest();
       xhr.open("GET", "http://127.0.0.1:5000/doserial/ranking/" + anotation, true);
@@ -164,8 +164,8 @@ arousalScale1.addEventListener("click", function(){
   });
 
   arousalScale5.addEventListener("click", function(){
-      //arousal scale select marker using 104
-      var anotation = "104";
+      //arousal scale select marker using 105 for 2
+      var anotation = "101";
       console.log(anotation);
       var xhr = new XMLHttpRequest();
       xhr.open("GET", "http://127.0.0.1:5000/doserial/ranking/" + anotation, true);
@@ -174,7 +174,7 @@ arousalScale1.addEventListener("click", function(){
 
 
   arousalNext.addEventListener("click", function(){
-      //arousal next marker using 110
+      //arousal next marker using 110 for end of arousal
       var arousalN = "110";
       console.log(arousalN);
       var xhr = new XMLHttpRequest();

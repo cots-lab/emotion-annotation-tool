@@ -1,8 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 
-
-
 function writeRecord(id,music,arousal,valence,strongness,likeness,familiarity){
     fs.appendFile("./public/data/"+id+".txt",music+","+arousal+","+valence+","+strongness+","+likeness+","+familiarity+"\n", function(err) {
         if(err) {
@@ -43,14 +41,16 @@ function writeHead(timestamp,time,date,age,gender){
         console.log("The head of the file saved!");
     });
 }
+
 function checkFreeAnnotations(id){
     var files=allFiles();
     var previouslySelectedFiles=prevSelectedFiles(id);
     files=files.filter(function(file){
         return !previouslySelectedFiles.includes(file);
     });
-    return files.length;
+    return files.length-1;
 }
+
 function validate(timestamp){
     const path = './public/data/'+timestamp+'.txt';
     try {
@@ -65,6 +65,7 @@ function validate(timestamp){
 exports.getMain = (req,res) => {
     res.render('home');
 }
+
 exports.postMain = (req,res) => {
     //show the reqest content
     console.log("Data Recived : ", req.body.age, req.body.gender);
@@ -72,9 +73,11 @@ exports.postMain = (req,res) => {
     writeHead(TimeStamp,new Date().toLocaleTimeString(),new Date().toLocaleDateString(),req.body.age,req.body.gender);
     res.render('instraction',{id:TimeStamp});
 }
+
 exports.getHelp = (req,res) => {
     res.render('instraction-sec');
 }
+
 exports.getAnnotation = (req,res) =>{
     const id=req.query.id;
     console.log("Annotation Subject: ",id);
@@ -86,8 +89,8 @@ exports.getAnnotation = (req,res) =>{
     else{
         res.render("home");
     }
-    
 }
+
 exports.getArousalAnnotation= (req,res) =>{
     const id=req.query.id;
     const music=req.query.music;
@@ -99,6 +102,7 @@ exports.getArousalAnnotation= (req,res) =>{
         res.render("home");
     }
 }
+
 exports.getAdditionalAnnotations = (req,res) =>{
     const id=req.query.id;
     const music=req.query.music;
@@ -111,18 +115,21 @@ exports.getAdditionalAnnotations = (req,res) =>{
         res.render("home");
     }
 }
+
 exports.getValenceAnnotation= (req,res) =>{
     const id=req.query.id;
     const music=req.query.music;
     const arousal=req.query.arousal;
     if (validate(id)){
+        console.log("Valance Annotation Music: ",music);
         res.render("valenceAnnotation",{id:req.query.id,music:music,arousal:arousal});
     }
     else{
         res.render("home");
     }
 }
-exports.getFromEnd= (req,res) =>{
+
+exports.getFromEnd = (req,res) =>{
     const id=req.query.id;
     const music=req.query.music;
     const arousal=req.query.arousal;
