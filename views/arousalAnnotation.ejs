@@ -134,42 +134,62 @@ arousalScale1.addEventListener("click", function(){
       var xhr = new XMLHttpRequest();
       xhr.open("GET", "http://127.0.0.1:5000/doserial/ranking/" + anotation, true);
       xhr.send();
+      arousalScale2.disabled = true;
+      arousalScale3.disabled = true;
+      arousalScale4.disabled = true;
+      arousalScale5.disabled = true;
   });
 
   arousalScale2.addEventListener("click", function(){
       //arousal scale select marker using 102 for -1
-      var anotation = "101";
+      var anotation = "102";
       console.log(anotation);
       var xhr = new XMLHttpRequest();
       xhr.open("GET", "http://127.0.0.1:5000/doserial/ranking/" + anotation, true);
       xhr.send();
+      arousalScale1.disabled = true;
+      arousalScale3.disabled = true;
+      arousalScale4.disabled = true;
+      arousalScale5.disabled = true;
   });
 
   arousalScale3.addEventListener("click", function(){
       //arousal scale select marker using 103 for 0
-      var anotation = "101";
+      var anotation = "103";
       console.log(anotation);
       var xhr = new XMLHttpRequest();
       xhr.open("GET", "http://127.0.0.1:5000/doserial/ranking/" + anotation, true);
       xhr.send();
+      arousalScale1.disabled = true;
+      arousalScale2.disabled = true;
+      arousalScale4.disabled = true;
+      arousalScale5.disabled = true;
   });
 
   arousalScale4.addEventListener("click", function(){
       //arousal scale select marker using 104 for 1
-      var anotation = "101";
+      var anotation = "104";
       console.log(anotation);
       var xhr = new XMLHttpRequest();
       xhr.open("GET", "http://127.0.0.1:5000/doserial/ranking/" + anotation, true);
       xhr.send();
+      arousalScale1.disabled = true;
+      arousalScale2.disabled = true;
+      arousalScale3.disabled = true;
+      arousalScale5.disabled = true;
   });
 
   arousalScale5.addEventListener("click", function(){
       //arousal scale select marker using 105 for 2
-      var anotation = "101";
+      var anotation = "105";
       console.log(anotation);
       var xhr = new XMLHttpRequest();
       xhr.open("GET", "http://127.0.0.1:5000/doserial/ranking/" + anotation, true);
       xhr.send();
+      arousalScale1.disabled = true;
+      arousalScale2.disabled = true;
+      arousalScale3.disabled = true;
+      arousalScale4.disabled = true;
   });
 
 
