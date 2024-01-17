@@ -130,7 +130,7 @@ $(document).ready(function(){
 });
 
 valenceScale1.addEventListener("click", function(){
-      //valence scale select marker using 99
+      //valence scale select marker using 111 for -2
       var valence = "111";
       console.log(valence);
       var xhr = new XMLHttpRequest();
@@ -139,8 +139,8 @@ valenceScale1.addEventListener("click", function(){
   });
 
   valenceScale2.addEventListener("click", function(){
-      //valence scale select marker using 99
-      var valence = "112";
+      //valence scale select marker using 112 for -1
+      var valence = "111";
       console.log(valence);
       var xhr = new XMLHttpRequest();
       xhr.open("GET", "http://127.0.0.1:5000/doserial/ranking/" + valence, true);
@@ -148,8 +148,8 @@ valenceScale1.addEventListener("click", function(){
   });
 
   valenceScale3.addEventListener("click", function(){
-      //valence scale select marker using 99
-      var valence = "113";
+      //valence scale select marker using 113 for 0
+      var valence = "111";
       console.log(valence);
       var xhr = new XMLHttpRequest();
       xhr.open("GET", "http://127.0.0.1:5000/doserial/ranking/" + valence, true);
@@ -157,8 +157,8 @@ valenceScale1.addEventListener("click", function(){
   });
 
   valenceScale4.addEventListener("click", function(){
-      //valence scale select marker using 99
-      var valence = "114";
+      //valence scale select marker using 114 for 1
+      var valence = "111";
       console.log(valence);
       var xhr = new XMLHttpRequest();
       xhr.open("GET", "http://127.0.0.1:5000/doserial/ranking/" + valence, true);
@@ -166,8 +166,8 @@ valenceScale1.addEventListener("click", function(){
   });
 
   valenceScale5.addEventListener("click", function(){
-      //valence scale select marker using 99
-      var valence = "115";
+      //valence scale select marker using 115 for 2
+      var valence = "111";
       console.log(valence);
       var xhr = new XMLHttpRequest();
       xhr.open("GET", "http://127.0.0.1:5000/doserial/ranking/" + valence, true);
@@ -175,7 +175,7 @@ valenceScale1.addEventListener("click", function(){
   });
 
   valenceNext.addEventListener("click", function(){
-      //valence scale select marker using 99
+      //valence scale select marker using 120 for end of valence
       var valenceN = "120";
       console.log(valenceN);
       var xhr = new XMLHttpRequest();
