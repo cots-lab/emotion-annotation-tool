@@ -1,0 +1,115 @@
+<%- include('./includes/top.ejs') %>
+<div class="space2"></div>
+<div class="row mx-auto justify-content-center align-items-center flex-column">
+  <div class="col-5">
+    <div class="alert alert-primary" role="alert">
+      <h4 class="alert-heading">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-emoji-laughing-fill" viewBox="0 0 16 16">
+            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zM7 6.5c0 .501-.164.396-.415.235C6.42 6.629 6.218 6.5 6 6.5c-.218 0-.42.13-.585.235C5.164 6.896 5 7 5 6.5 5 5.672 5.448 5 6 5s1 .672 1 1.5zm5.331 3a1 1 0 0 1 0 1A4.998 4.998 0 0 1 8 13a4.998 4.998 0 0 1-4.33-2.5A1 1 0 0 1 4.535 9h6.93a1 1 0 0 1 .866.5zm-1.746-2.765C10.42 6.629 10.218 6.5 10 6.5c-.218 0-.42.13-.585.235C9.164 6.896 9 7 9 6.5c0-.828.448-1.5 1-1.5s1 .672 1 1.5c0 .501-.164.396-.415.235z"/>
+          </svg>
+        Relaxation Phase
+      </h4>
+      <br />
+      <p>Thank you for taking the time to complete the 1st annotation process for COTS Labs. Please take your time to relax for 30 seconds, before starting the next annotation process </p> 
+      <!--Next button -->
+      <div id="countdown" class="countdown py-4 text-center display-4">1:00 </div>
+    <div>
+
+      
+
+    </div>
+      <form  method="GET" action="/annotation2">
+        <input type="hidden" name="id" value="<%= id %>" />
+        <button
+          id="relax-btn"
+          class="btn btn-primary"
+          type="submit"
+          style="margin-right:20px;padding-right: 20px;padding-left: 20px">
+          Next Annotation
+      </button>
+      </form>
+    </div>
+    </div>
+</div>
+
+<script>
+/*
+
+  const countdownEl = document.getElementById('countdown');
+
+  setInterval(updateCountdown,1000);
+
+  function updateCountdown(){
+    const countdownEl = document.getElementById('countdown');
+    let minutes = document.getElementById('minutes');
+    let seconds = document.getElementById('seconds');
+  if (seconds.innerHTML > 0){
+    let seconds2 = seconds.innerHTML 
+    seconds2--
+    seconds.innerHTML = `${seconds2}`;
+  }else
+  
+    console.log(seconds2);
+    console.log(seconds);
+
+
+  }
+*/
+  const startingMinutes = 1;
+  let time = startingMinutes * 60;
+
+  const countdownEl = document.getElementById('countdown');
+
+  setInterval(updateCountdown,1000);
+
+  function updateCountdown(){
+    const minutes = Math.floor(time/60);
+    let seconds = time % 60;
+
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    if (time != -1){
+      countdownEl.innerHTML = `${minutes}:${seconds}`;
+      time--;
+    }
+    
+  }
+
+
+
+</script>
+
+
+
+<!--
+<script>
+
+  // Set the date we're counting down to
+  var countDownDate = new Date().getTime() + (60 * 1000);;
+
+  // Update the count down every 1 second
+  var x = setInterval(function() {
+
+    // Get today's date and time
+    var now = new Date().getTime();
+      
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+      
+    // Time calculations for days, hours, minutes and seconds
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+    // Output the result in an element with id="demo"
+    document.getElementById("clock-c").innerHTML = minutes + "m " + seconds + "s ";
+      
+    // If the count down is over, write some text 
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+  }, 1000);
+    
+</script>
+-->
+
+<%- include('./includes/bottom.ejs') %>
