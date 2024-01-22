@@ -16,7 +16,7 @@
     <div class="col-1"></div>
     <div class="col-2">
       <img
-        src="./images/valence/-2.png"
+        src="./images/cots/valence/-2.png"
         class="img-fluid"
         alt="Responsive image"
         name="-2"
@@ -24,7 +24,7 @@
     </div>
     <div class="col-2">
       <img
-        src="./images/valence/-1.png"
+        src="./images/cots/valence/-1.png"
         class="img-fluid"
         alt="Responsive image"
         name="-1"
@@ -32,7 +32,7 @@
     </div>
     <div class="col-2">
       <img
-        src="./images/valence/0.png"
+        src="./images/cots/valence/0.png"
         class="img-fluid"
         alt="Responsive image"
         name="0"
@@ -40,7 +40,7 @@
     </div>
     <div class="col-2">
       <img
-        src="./images/valence/+1.png"
+        src="./images/cots/valence/+1.png"
         class="img-fluid"
         alt="Responsive image"
         name="1"
@@ -48,7 +48,7 @@
     </div>
     <div class="col-2">
       <img
-        src="./images/valence/+2.png"
+        src="./images/cots/valence/+2.png"
         class="img-fluid"
         alt="Responsive image"
         name="2"
@@ -130,52 +130,72 @@ $(document).ready(function(){
 });
 
 valenceScale1.addEventListener("click", function(){
-      //valence scale select marker using 99
+      //valence scale select marker using 111 for -2
       var valence = "111";
       console.log(valence);
       var xhr = new XMLHttpRequest();
       xhr.open("GET", "http://127.0.0.1:5000/doserial/ranking/" + valence, true);
       xhr.send();
+      valenceScale2.disabled = true;
+      valenceScale3.disabled = true;
+      valenceScale4.disabled = true;
+      valenceScale5.disabled = true;
   });
 
   valenceScale2.addEventListener("click", function(){
-      //valence scale select marker using 99
-      var valence = "112";
+      //valence scale select marker using 112 for -1
+      var valence = "111";
       console.log(valence);
       var xhr = new XMLHttpRequest();
       xhr.open("GET", "http://127.0.0.1:5000/doserial/ranking/" + valence, true);
       xhr.send();
+      valenceScale1.disabled = true;
+      valenceScale3.disabled = true;
+      valenceScale4.disabled = true;
+      valenceScale5.disabled = true;
   });
 
   valenceScale3.addEventListener("click", function(){
-      //valence scale select marker using 99
-      var valence = "113";
+      //valence scale select marker using 113 for 0
+      var valence = "111";
       console.log(valence);
       var xhr = new XMLHttpRequest();
       xhr.open("GET", "http://127.0.0.1:5000/doserial/ranking/" + valence, true);
       xhr.send();
+      valenceScale1.disabled = true;
+      valenceScale2.disabled = true;
+      valenceScale4.disabled = true;
+      valenceScale5.disabled = true;
   });
 
   valenceScale4.addEventListener("click", function(){
-      //valence scale select marker using 99
-      var valence = "114";
+      //valence scale select marker using 114 for 1
+      var valence = "111";
       console.log(valence);
       var xhr = new XMLHttpRequest();
       xhr.open("GET", "http://127.0.0.1:5000/doserial/ranking/" + valence, true);
       xhr.send();
+      valenceScale1.disabled = true;
+      valenceScale2.disabled = true;
+      valenceScale3.disabled = true;
+      valenceScale5.disabled = true;
   });
 
   valenceScale5.addEventListener("click", function(){
-      //valence scale select marker using 99
-      var valence = "115";
+      //valence scale select marker using 115 for 2
+      var valence = "111";
       console.log(valence);
       var xhr = new XMLHttpRequest();
       xhr.open("GET", "http://127.0.0.1:5000/doserial/ranking/" + valence, true);
       xhr.send();
+      valenceScale1.disabled = true;
+      valenceScale2.disabled = true;
+      valenceScale3.disabled = true;
+      valenceScale4.disabled = true;
   });
 
   valenceNext.addEventListener("click", function(){
-      //valence scale select marker using 99
+      //valence scale select marker using 120 for end of valence
       var valenceN = "120";
       console.log(valenceN);
       var xhr = new XMLHttpRequest();

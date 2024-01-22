@@ -1,5 +1,0 @@
-Time :1:50:07 PM
-Date :1/12/2024
-Age:25
-Gender:male
-
