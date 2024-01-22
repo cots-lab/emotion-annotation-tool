@@ -1,0 +1,276 @@
+<%- include('./includes/top.ejs') %>
+<div class="row mx-auto justify-content-center align-items-center flex-column">
+  <div class="col-8">
+    <div class="alert alert-success" role="alert">
+      <h4 class="alert-heading">Your Subject ID : <%= id %></h4>
+      <hr />
+      <h6>Instructions</h6>
+      <ul>
+        <li>
+          You will be redirecting a page that has a music player and you can
+          play the music by clicking the play button
+        </li>
+        <li>
+          You must listen to the music clip at least 10 seconds uninterrupted by external
+          stimuli. 
+        </li>
+        <li>Use a good headset/sound system to listen to music.</li>
+        <li>
+          After listening to the music clip, you can go to the
+          valence-annotation process.
+        </li>
+        <li>
+          After the valence annotation, you can go to the arousal-annotation
+          process.
+        </li>
+        <li>Then,you can submit your annotation.</li>
+        <li>
+          After submitting your annotation, you can continue the annotation
+          process by annotating another track of music or finish the annotation.
+        </li>
+      </ul>
+    </div>
+    <div class="alert alert-info" role="alert">
+      <h5 class="alert-heading">What is valence ?</h5>
+      <p>
+        Valence refers to the <b>pleasantness</b> or <b>unpleasantness</b> of an
+        emotional stimulus.
+      </p>
+      <hr />
+      <h6>Example</h6>
+      <div class="row">
+        <div class="col-6">
+          <div class="card text-white bg-danger mb-3">
+            <div class="card-header">Lower end of the scale</div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-6">
+                  <img
+                    src="./images/sam/valence/low.jpg"
+                    alt="valence scale"
+                    style="width: 100%"
+                    class="imgx"
+                  />
+                </div>
+                <div class="col-6">
+                  <h5 class="card-title">Negative Valence</h5>
+                  <p class="card-text">
+                    Emotions popularly referred to as Negative, such as unhappy,annoyed,anger and fear, have negative valence.
+                  </p>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="card text-white bg-success mb-3">
+              <div class="card-header">Higher end of the scale</div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-6">
+                    <img
+                      src="./images/sam/valence/high.jpg"
+                      alt="valence scale"
+                      style="width: 100%"
+                      class="imgx"
+                    />
+                  </div>
+                  <div class="col-6">
+                    <h5 class="card-title">Positive Valence</h5>
+                    <p class="card-text">
+                        Emotions popularly referred to as Positive, such as happy,pleased and hopeful,have positive valence.
+                    </p>
+                </div>
+            </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <h6>Valence Scale</h6>
+          <div class="row">
+            <div class="col-1"></div>
+            <div class="col-2 text-center">
+              <img
+                src="./images/sam/valence/-2.png"
+                class="img-fluid"
+                alt="Responsive image"
+              />
+            </div>
+            <div class="col-2 text-center">
+              <img
+                src="./images/sam/valence/-1.png"
+                class="img-fluid"
+                alt="Responsive image"
+              />
+            </div>
+            <div class="col-2 text-center">
+              <img
+                src="./images/sam/valence/0.png"
+                class="img-fluid"
+                alt="Responsive image"
+              />
+            </div>
+            <div class="col-2 text-center">
+              <img
+                src="./images/sam/valence/+1.png"
+                class="img-fluid"
+                alt="Responsive image"
+              />
+            </div>
+            <div class="col-2 text-center">
+              <img
+                src="./images/sam/valence/+2.png"
+                class="img-fluid"
+                alt="Responsive image"
+              />
+            </div>
+            <div class="col-1"></div>
+          </div>
+        </div>
+        <div class="alert alert-info" role="alert">
+          <h5 class="alert-heading">What is arousal ?</h5>
+          <p>
+            Emotional Arousal is a state of heightened physiological activity.<b
+              >Excitement/activeness</b
+            >
+            will be high arousal and <b>calm/relax</b> will be low arrosal.
+          </p>
+          <hr />
+            <h6>Example</h6>
+          <div class="row">
+            <div class="col-6">
+              <div class="card text-white bg-warning mb-3">
+                <div class="card-header">Lower end of the scale</div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-6">
+                      <img
+                        src="./images/sam/arousal/low.jpg"
+                        alt="valence scale"
+                        style="width: 100%"
+                        class="imgx"
+                      />
+                    </div>
+                    <div class="col-6">
+                      <h5 class="card-title">Low Arousal</h5>
+                      <p class="card-text">
+                        Arousal describes the level of excitement different emotions elicit.Calm and sadness and reflection have low arousal levels.
+                      </p>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="card text-white bg-dark mb-3">
+                  <div class="card-header">Higher end of the scale</div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-6">
+                        <img
+                          src="./images/sam/arousal/high.jpg"
+                          alt="valence scale"
+                          style="width: 100%"
+                          class="imgx"
+                        />
+                      </div>
+                      <div class="col-6">
+                        <h5 class="card-title">High Arousal</h5>
+                        <p class="card-text">
+                            Arousal describes the level of excitement different emotions elicit. Anger and joy tend to be high arousal.
+                        </p>
+                      </div>
+                </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+          <hr />
+          <h6>Arousal Scale</h6>
+          <div class="row">
+            <div class="col-1">
+            </div>
+            <div class="col-2 text-center">
+              <img
+                src="./images/sam/arousal/-2.png"
+                class="img-fluid"
+                alt="Responsive image"
+              />
+            </div>
+            <div class="col-2 text-center">
+              <img
+                src="./images/sam/arousal/-1.png"
+                class="img-fluid"
+                alt="Responsive image"
+              />
+            </div>
+            <div class="col-2 text-center">
+              <img
+                src="./images/sam/arousal/0.png"
+                class="img-fluid"
+                alt="Responsive image"
+              />
+            </div>
+            <div class="col-2 text-center">
+              <img
+                src="./images/sam/arousal/+1.png"
+                class="img-fluid"
+                alt="Responsive image"
+              />
+            </div>
+            <div class="col-2 text-center">
+              <img
+                src="./images/sam/arousal/+2.png"
+                class="img-fluid"
+                alt="Responsive image"
+              />
+            </div>
+            <div class="col-1">
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-info" role="alert">
+          <h5 class="alert-heading">Example</h5>
+          Example for annonatating <b>arousal and valence</b> for music.
+          <hr />
+          <video src="./videos/video.mp4" width="100%" controls></video>
+        </div>
+
+        <form method="GET" action="/sam-annotation">
+          <input type="hidden" name="id" value="<%= id %>" />
+          <!-- i agree check box--><br><br>
+          <div class="row">
+            <div class="col-12">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="defaultCheck1"
+                  required
+                />
+                <label class="form-check-label" for="defaultCheck1">
+                  I have a good understanding of the arousal, valence scale and how this annotation process works in general.  
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md">
+              <div class="d-flex justify-content-end">
+          <button type="submit" class="btn btn-primary pull-right">
+            Start Annotation
+          </button>
+        </div>
+            </div>
+          </div>
+          <br>
+        </form>
+      </div>
+    </div>
+    <%- include('./includes/bottom.ejs') %>
+  </div>
+</div>
